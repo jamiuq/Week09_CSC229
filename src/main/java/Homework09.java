@@ -1,5 +1,8 @@
+import java.lang.Math;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
@@ -27,8 +30,24 @@ Let us list the factors of the first seven triangle numbers:
 We can see that 28 is the first triangle number to have over five divisors.
 
 What is the value of the first triangle number to have over one hundred divisors?
+
+
+    FORMULA = n(n + 1)/2
     
     */
-    
+    int n = 2;
+    while (true)
+    {
+        int local_triangle = (n * ( n + 1 ))/2;
+        int num_divisors = 2;
+        // find divisors of local_triangle
+        for (int i = 2; i <= n/2; i++)
+        {
+            if (local_triangle % i == 0) num_divisors += 2;
+        }
+        if (num_divisors > 100) break;
+        n++;
+    }
+    System.out.println(n + " is the first triangle number to have over one hundred divisors.");
     
 }
