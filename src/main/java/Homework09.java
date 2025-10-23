@@ -35,19 +35,21 @@ What is the value of the first triangle number to have over one hundred divisors
     FORMULA = n(n + 1)/2
     
     */
-    int n = 2;
-    while (true)
+    public static void main(String[] args)
     {
-        int local_triangle = (n * ( n + 1 ))/2;
-        int num_divisors = 2;
-        // find divisors of local_triangle
-        for (int i = 2; i <= n/2; i++)
-        {
-            if (local_triangle % i == 0) num_divisors += 2;
-        }
-        if (num_divisors > 100) break;
-        n++;
+       int n = 2;
+       while (true)
+       {
+           int local_triangle = (n * ( n + 1 ))/2;
+           int num_divisors = 2;
+           // find divisors of local_triangle
+           for (int i = 2; i <= n/2; i++)
+           {
+               if (local_triangle % i == 0) num_divisors += 2;
+           }
+           if (num_divisors > 100) break;
+           n++;
+       }
+       System.out.println(n + " is the first triangle number to have over one hundred divisors.");
     }
-    System.out.println(n + " is the first triangle number to have over one hundred divisors.");
-    
 }
