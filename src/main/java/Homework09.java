@@ -43,7 +43,7 @@ What is the value of the first triangle number to have over one hundred divisors
            int local_triangle = (n * ( n + 1 ))/2;
            int num_divisors = 2;
            // find divisors of local_triangle
-           for (int i = 2; i <= n/2; i++)
+           for (int i = 2; i <= Math.sqrt(n); i++)
            {
                if (local_triangle % i == 0) num_divisors += 2;
            }
